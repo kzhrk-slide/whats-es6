@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ES6とは</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body {
+        font-family: 'Droid Serif', 'YuGothic', 'Arial', serif;
+      }
+      h1, h2, h3, h4 {
+        font-weight: normal;
+        color: #c18100;
+        line-height: 1.2;
+      }
+      a,
+      a:link,
+      a:visited {
+        color: #825700;
+      }
+      li {
+        margin-top: 5px;
+      }
+      li:first-child {
+        margin-top: 0;
+      }
+      ul ul {
+        margin-top: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .big {
+        font-size: 150px;
+      }
+      .fz60 {
+        font-size: 60px;
+      }
+      code.text {
+        white-space: normal;
+      }
+      pre {
+        padding: 1em;
+        background-color: #eee;
+      }
+      table {
+        width: 100%;
+      }
+      th {
+        padding: 0.5em;
+        background-color: #ffdbb6;
+      }
+      td {
+        padding: 0.5em;
+        background-color: #fff7e7;
+      }
+      tr {
+        background-color: #eee;
+      }
+      blockquote {
+        display: inline-block;
+        padding: 0 1em;
+        margin-left: 0;
+        background: #eee;
+        border-left: 5px solid #4c3300;
+      }
+      .w100 img {
+        width: 100%;
+      }
+      .del {
+        text-decoration: line-through;
+      }
+      .remark-slide-scaler {
+        overflow: scroll;
+      }
+      .remark-slide-number {
+
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+
+      class: center, middle
+
+      # ES6とは
+
+      2018/02/06
+
+      Kobayashi Kazuhiro (kzhrk)
+
+      ---
+
+      ## 本日のテーマ
+
+      - 課題チェック
+      - ESって？
+      - ESのサポートブラウザの話
+      - なぜES2015(ES6)なのか
+      - 実案件でどう使っているのか
+
+      ---
+      class: center, middle
+
+      # 課題チェック
+
+      ---
+
+      ## 前回の課題
+
+      CommonChunkPluginでjquery + slickを使う
+
+      webpack.config.jsにCommonChunkPluginを設定して、slickを実行する
+
+      ---
+      class: center, middle
+
+      # 前回のおさらい
+
+      ---
+
+      ## CommonChunkPluginでjquery + slickを使う
+
+      webpack.config.jsにCommonChunkPluginを設定して、slickを実行する
+
+      ---
+      class: center, middle
+
+      # ES6とは何か
+
+      ---
+      class: center, middle
+
+      # そもそもESとは
+
+      ---
+      class: center, middle
+
+      # ECMAScript
+
+      ---
+      class: center, middle
+
+      # 🤔🤔🤔
+
+      ---
+
+      ## ECMAとは
+
+      --
+
+      - European
+
+      --
+
+      - Computer
+
+      --
+
+      - Manufacturers
+
+      --
+
+      - Association
+
+      --
+
+      欧州電子計算機工業会（現在はEcma International）
+
+      ECMAとは国際的な標準化団体の名称。HTMLでいうところのW3C。
+
+      ---
+
+      ## ECMAScriptとは
+
+      標準化団体のECMA Internationalが定義するJavaScriptの言語仕様。
+
+      ---
+
+      ## URLs
+
+      - [ECMAScriptの公式サイト](https://tc39.github.io/ecma262/)
+      - [GitHubリポジトリ](https://github.com/tc39/ecma262)
+      - [TC39のGitHubアカウント](https://github.com/tc39)
+
+      ECMA-262(規格番号) = ECMAScript
+
+      TC39 = Ecma International内でECMAScriptの策定を行っているグループ
+
+      ---
+
+      ## ES6の6とは
+
+      6th editionのこと。つまりversion。
+
+      6th editionから「ECMAScript 2015」仕様の名称に発行年が付加されるようになっている。
+
+      http://www.wirfs-brock.com/allen/posts/778
+
+      ---
+      class: center, middle
+
+      # 🆖ES6 => 🆗ES2015
+
+      ---
+      class: center, middle
+
+      # ES2015のサポートブラウザ
+
+      ---
+
+      ## 参考URL
+
+      - [Can I use](https://caniuse.com/#search=es6)
+      - [ECMAScript 6 compatibility table](http://kangax.github.io/compat-table/es6/)
+      - [Google Chrome Platform Status](https://www.chromestatus.com/features#ES6)
+      - [ECMAScript 6 support in Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_2015_support_in_Mozilla)
+      - [Microsoft platform status](https://developer.microsoft.com/en-us/microsoft-edge/platform/status/arrayprototypeincludeses2016/?search=es6&q=category%3Ajavascript)
+      - [WebKit Feature Status](https://webkit.org/status/#specification-ES6)
+
+      ---
+      class: center, middle
+
+      # なぜES2015なのか
+
+      ---
+
+      ## 開発が楽になる
+
+      - コード量が減る
+      - よりプログラマブルにコードを書ける
+      - バグが減る
+
+      ---
+      class: center, middle
+
+      # 実案件でどう使っているのか
+
+      ---
+
+      ## Babel.js
+
+      https://babeljs.io/
+
+      ターゲットブラウザを指定して、未対応のES2015~の記述をES5の記述に変更してくれるJavaScriptコンパイラ。
+
+      ---
+
+      ## Babel with webpack
+
+      .babelrc
+      ```:js
+      {
+        "presets": ["es2015"]
+      }
+      ```
+
+      webpack.config.js
+      ```:js
+      [...]
+      module: {
+        rules: [
+          {
+            test: /\.js$/,
+            use: [{
+              loader: "babel-loader"
+            }]
+          }
+        ]
+      },
+      [...]
+      ```
+
+      ---
+
+      ## ES2015 features
+
+      - Arrorws
+      - Classes
+      - Enhanced Object Literals
+      - Template Strings
+      - Arguments: Default
+      - Arguments: Rest
+      - Arguments: Spread
+      - let, const
+      - Modules
+      - Promises
+
+      ---
+
+      ## Arrorws
+
+      - 関数の定義が短縮される
+      - thisの束縛がおきない
+
+      ```:js
+      function sample(){
+        this.count = 0;
+
+        setInterval(()=>{
+          console.log(this.count++);
+        }, 1000);
+      }
+      sample();
+      ```
+
+      ---
+
+      ## Classes
+
+      ```:js
+      class Cat {
+        constructor() {
+          this.name = 'cat';
+          this.voice = 'nyaa';
+        }
+      }
+
+      class MyCat extends Cat {
+        constructor() {
+          super();
+          this.name = 'tama';
+        }
+      }
+
+      const myCat = new MyCat();
+      console.log(myCat.name);
+      console.log(myCat.voice);
+      ```
+
+      ---
+
+      ## Enhanced Object Literals
+
+      - Objectのkeyの省略
+      - keyの変数化
+
+      ```:js
+      var hoge = 1;
+      var obj = {
+        hoge,
+        fuga() {
+          return 'fuga';
+        },
+        ['piyo' + hoge]: 'piyo1'
+      };
+
+      console.log(obj);
+      console.log(obj.fuga());
+      ```
+
+      ---
+
+      ## Template Strings
+
+      - 文字列内に変数を含めることができる
+
+
+      ```:js
+      var year = 2018;
+      var month = 1;
+      var day = 6;
+
+      // es5
+      console.log(year + '-' + (month+1) + '-' + day);
+
+      // es2015
+      console.log(`${year}-${month + 1}-${day}`);
+      ```
+
+      ---
+
+      ## Arguments: Default
+
+      - 関数の引数にデフォルト値の設定
+
+      ```:js
+      function add(x, y = 1) {
+        console.log(x+y);
+      }
+
+      add(1);
+      ```
+
+      ---
+
+      ## Arguments: Rest
+
+      - 関数の未定義の引数を配列として受け取る
+
+      ```:js
+      function add(x, ...arr) {
+        console.log(x, arr);
+      }
+
+      add(1,2,3);
+      ```
+
+      ---
+
+      ## Arguments: Spread
+
+      - 関数の引数として配列を受け渡す
+
+      ```:js
+      function add(x, y, z) {
+        console.log(x + y + z);
+      }
+
+      add(...[1, 2, 3]);
+      add(1,...[2, 3]);
+      add(1, 2,...[3]);
+      ```
+
+      ---
+
+      ## let, const
+
+      - let: ブロックスコープ
+      - const: シングルアサイン
+
+      ```:js
+      const x = 1;
+      x = 2; // error
+      ```
+
+      ```:js
+      let x = 0;
+
+      (function() {
+        let x = 1;
+        let x = 2; // error
+      })();
+      ```
+
+      ---
+
+      ## Modules
+
+      - モジュール定義
+
+      ```:js
+      // math.js
+      export const sum = (x, y)=>{
+        return (x+y);
+      }
+      export const pi = '3.14';
+      ```
+
+      ```:js
+      // app.js
+      import * as math from './math';
+
+      console.log(
+        math.sum(1,2),
+        math.pi
+      );
+      ```
+
+      ---
+
+      ## Modules
+
+      ### export
+
+      ```:js
+      export { name1, name2 };
+      export { variable1 as name1, variable2 as name2 };
+      export let name1 = 1;
+
+      export default expression;
+      export default function (…) { … }
+      export default function name1(…) { … }
+
+      export * from name1;
+      ```
+
+      ---
+
+      ## Modules
+
+      ### import
+
+      ```:js
+      import defaultMember from "module-name";
+      import * as name from "module-name";
+      import { member } from "module-name";
+      import { member as alias } from "module-name";
+      import { member1, member2 } from "module-name";
+      import { member1, member2 as alias2 } from "module-name";
+      import defaultMember, { member } from "module-name";
+      import defaultMember, * as name from "module-name";
+      import "module-name";
+      ```
+
+      ---
+
+      ## Promises
+
+      - 非同期処理を行う
+
+      ```:js
+      function timeout(duration = 0, name) {
+        return new Promise((resolve, reject) => {
+          setTimeout(()=>{
+            console.log(`タイマー名:${name}`, `セットされた時間:${duration}`);
+            resolve();
+          }, duration);
+        });
+      }
+
+      timeout(1000, '最初').then(() => {
+        return timeout(2000, '2番目');
+      }).then(() => {
+        throw new Error("hmm");
+      }).catch(err => {
+        return Promise.all([timeout(2000, '3番目'), timeout(1000, '4番目')]);
+      });
+      ```
+
+      ---
+
+      ## 他にもいろいろ
+
+      https://github.com/lukehoban/es6features
+
+      - generator
+      - unicode
+      - proxie
+      - map, weakmap
+      - symbols
+      - etc...
+
+      ---
+      class: center, middle
+
+      # END
+
+    </textarea>
+    <script src="js/remark.min.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create({
+        navigation: {
+          scroll: false
+        }
+      });
+    </script>
+  </body>
+</html>

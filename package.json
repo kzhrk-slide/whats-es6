@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "browser-sync start --port 3333 --server ./ --files ./"
+  },
+  "author": "kzhrk",
+  "license": "NYSL",
+  "devDependencies": {
+    "browser-sync": "^2.12.8"
+  }
+}
