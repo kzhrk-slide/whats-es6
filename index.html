@@ -114,16 +114,8 @@
 
       webpack.config.jsにCommonChunkPluginを設定して、slickを実行する
 
-      ---
-      class: center, middle
-
-      # 前回のおさらい
-
-      ---
-
-      ## CommonChunkPluginでjquery + slickを使う
-
-      webpack.config.jsにCommonChunkPluginを設定して、slickを実行する
+      https://github.com/kzhrk-sandbox/training-webpack/tree/master/step4
+      https://kzhrk-sandbox.github.io/training-webpack/step4/public/
 
       ---
       class: center, middle
@@ -149,23 +141,7 @@
 
       ## ECMAとは
 
-      --
-
-      - European
-
-      --
-
-      - Computer
-
-      --
-
-      - Manufacturers
-
-      --
-
-      - Association
-
-      --
+      European Computer Manufacturers Association
 
       欧州電子計算機工業会（現在はEcma International）
 
@@ -198,6 +174,12 @@
       6th editionから「ECMAScript 2015」仕様の名称に発行年が付加されるようになっている。
 
       http://www.wirfs-brock.com/allen/posts/778
+
+      > why the year-based designation?  The 6th edition of ECMA-262 took a long time to develop, arguably 15 years.<br>
+      [...]<br>
+      After a few years we would be talking about ES6, ES7, ES8, ES9, ES10, ES11, etc. Those numbers quickly loose any context for people who aren’t deeply involved in the standards development process.<br>
+      [...]<br>
+      We decide that TC39 would incorporate the year of release into the documents title and to encourage people to use the year when referring to a specific edition.
 
       ---
       class: center, middle
@@ -295,6 +277,17 @@
       - 関数の定義が短縮される
       - thisの束縛がおきない
 
+      ```:js
+      function sample(){
+        var _this = this;
+        _this.count = 0;
+
+        setInterval(function(){
+          console.log(_this.count++);
+        }, 1000);
+      }
+      sample();
+      ```
       ```:js
       function sample(){
         this.count = 0;
